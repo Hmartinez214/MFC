@@ -130,3 +130,10 @@ i-all CC=mpicc CXX=mpicxx FC=mpif90
 t     WPI Turing
 t-all slurm
 t-cpu gcc/12.1.0/i6yk33f openmpi/4.1.3/ebae7zc python/3.13.5/6anz4qy
+
+pm NERSC Perlmutter
+pm-all python
+pm-cpu cpu PrgEnv-gnu cray-fftw cray-hdf5-parallel
+pm-cpu CC=cc CXX=CC FC=ftn
+pm-gpu gpu PrgEnv-gnu cray-fftw cray-hdf5-parallel cudatoolkit craype-accel-nvidia80
+pm-gpu CC=cc CXX=CC FC=ftn #gpu is untested
