@@ -46,8 +46,8 @@ export HDF5_USE_FILE_LOCKING=FALSE
         (set -x; ${profiler} "${target.get_install_binpath(case)}")
     % else:
         (set -x; ${profiler}                                   \
-            srun --ntasks ${nodes*tasks_per_node}                 \
-                   "${target.get_install_binpath(case)}")
+        srun --ntasks ${nodes*tasks_per_node} --cpu-bind=cores \
+            "${target.get_install_binpath(case)}"
     % endif
     ${helpers.run_epilogue(target)}
     echo
